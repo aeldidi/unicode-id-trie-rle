@@ -7,6 +7,13 @@ I plan to write an article detailing my findings here and documenting the
 experience. I will update the README accordingly once that's finished to link
 to it.
 
+The final implementation is `unicode-id-trie-rle`, and is available on
+[`crates.io`](https://crates.io/crates/unicode-id-trie-rle).
+
+![crates.io badge](https://img.shields.io/crates/v/unicode-id-trie-rle)
+[![CI](https://github.com/aeldidi/unicode-id-trie-rle/actions/workflows/ci.yml/badge.svg)](https://github.com/aeldidi/unicode-id-trie-rle/actions/workflows/ci.yml)
+![docs.rs](https://img.shields.io/docsrs/unicode-id-trie-rle)
+
 ## Methodology
 
 Many solutions exist in the space already, but I wanted to see
