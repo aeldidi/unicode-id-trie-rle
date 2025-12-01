@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      CARGO_TERM_COLOR: always
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - name: Run Rust tests for published crates
+        run: |
+          cargo test -p unicode-id-trie-rle-derived-core-properties --all-targets
+          cargo test -p unicode-id-trie-rle --all-targets
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version-file: go/go.mod
+      - name: Run Go tests
+        working-directory: go
+        run: go test ./...
+      - name: Build and run C test
+        working-directory: c
+        env:
+          DERIVED_CORE_PROPERTIES: ../DerivedCoreProperties.txt
+        run: |
+          cc -std=c11 -Wall -Wextra -o unicode_identifiers_test unicode_identifiers_test.c
+          ./unicode_identifiers_test

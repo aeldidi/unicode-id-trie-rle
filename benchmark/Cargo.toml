@@ -1,0 +1,33 @@
+[package]
+name = "benchmark"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dev-dependencies]
+criterion = { version = "0.3", features = ["html_reports"] }
+baseline.path = "../baseline"
+delta-encoded.path = "../delta-encoded"
+run-indexed.path = "../run-indexed"
+unicode-id-start-harness.path = "../unicode-id-start"
+unicode-id-trie-rle.path = "../unicode-id-trie-rle"
+
+[[bench]]
+name = "ascii_100"
+harness = false
+
+[[bench]]
+name = "ascii_90"
+harness = false
+
+[[bench]]
+name = "ascii_50"
+harness = false
+
+[[bench]]
+name = "ascii_10"
+harness = false
+
+[[bench]]
+name = "ascii_0"
+harness = false

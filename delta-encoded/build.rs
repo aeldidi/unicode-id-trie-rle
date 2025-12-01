@@ -1,0 +1,191 @@
+use std::{
+    collections::BTreeMap,
+    env,
+    error::Error,
+    fs::File,
+    io::{BufWriter, Write},
+    path::PathBuf,
+};
+
+const MAX_CODEPOINT: u32 = 0x10ffff;
+const BYTES_PER_LINE: usize = 12;
+
+static mut EMIT_BUFFER: u8 = 0;
+static mut EMIT_BUFFER_SIZE: u8 = 0;
+
+/// Write n bits to the [EMIT_BITS_BUFFER]. Once it's full, we write to the
+/// output buffer. Bytes are written in little endian order, so
+/// `emit_bits(5, x)` then `emit_bits(3, y)` results in the 5 least significant
+/// bits being `xxxxx` and the 3 most significant bits being `yyy`.
+fn emit_bits(n: u8, mut value: u64, buffer: &mut Vec<u8>) {
+    if n <= 0 || n > 8 {
+        panic!("emit_bits called with out of range value. N must be [1, 8]");
+    }
+
+    // Mask off any bits above `n` so we only emit the requested width.
+    value &= (1u64 << n) - 1;
+    let space = 8 - unsafe { EMIT_BUFFER_SIZE };
+    // SAFETY: this is single threaded so accessing static mut variables is
+    //         safe.
+    unsafe {
+        if n <= space {
+            EMIT_BUFFER |= (value << EMIT_BUFFER_SIZE) as u8;
+            EMIT_BUFFER_SIZE += n;
+
+            if EMIT_BUFFER_SIZE == 8 {
+                buffer.push(EMIT_BUFFER);
+                EMIT_BUFFER = 0;
+                EMIT_BUFFER_SIZE = 0;
+            }
+        } else {
+            EMIT_BUFFER |= (value << EMIT_BUFFER_SIZE) as u8;
+            buffer.push(EMIT_BUFFER);
+
+            EMIT_BUFFER = (value >> space) as u8;
+            EMIT_BUFFER_SIZE = n - space;
+        }
+    }
+}
+
+fn flush_bits(buffer: &mut Vec<u8>) {
+    unsafe {
+        if EMIT_BUFFER_SIZE == 0 {
+            return;
+        }
+
+        buffer.push(EMIT_BUFFER);
+        EMIT_BUFFER = 0;
+        EMIT_BUFFER_SIZE = 0;
+    }
+}
+
+fn emit_leb128(mut x: u32, buffer: &mut Vec<u8>) {
+    loop {
+        let mut byte = (x & 0x7f) as u8;
+        x >>= 7;
+        if x != 0 {
+            byte |= 0x80;
+        }
+        emit_bits(8, byte as u64, buffer);
+        if x == 0 {
+            break;
+        }
+    }
+}
+
+fn main() -> Result<(), Box<dyn Error>> {
+    let manifest_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR")?);
+    let derived = manifest_dir.join("../DerivedCoreProperties.txt");
+    println!("cargo:rerun-if-changed={}", derived.display());
+    println!("cargo:rerun-if-changed=build.rs");
+
+    let file = File::open(&derived)?;
+    let parsed = unicode_id_trie_rle_derived_core_properties::parse(file)?;
+
+    // Convert the parsed file into a map from codepoint => 2 bit value
+    let parsed = parsed
+        .iter()
+        .filter(|(_, v)| {
+            v.contains("ID_Start")
+                || v.contains("XID_Start")
+                || v.contains("ID_Continue")
+                || v.contains("XID_Continue")
+        })
+        .map(|(k, v)| {
+            (
+                *k,
+                v.iter()
+                    .map(|x| {
+                        if x.contains("ID_Start") {
+                            1 << 0
+                        } else if x.contains("ID_Continue") {
+                            1 << 1
+                        } else {
+                            0
+                        }
+                    })
+                    .fold(0, |acc, x| acc | x),
+            )
+        })
+        .collect::<BTreeMap<char, i32>>();
+
+    let mut buffer = Vec::with_capacity(1 << 15);
+
+    let mut prev_end: u32 = 0;
+    let mut run_start: Option<u32> = None;
+    let mut run_end: u32 = 0;
+    let mut run_value: u8 = 0;
+
+    for (cp_char, value_bits) in parsed.into_iter() {
+        let cp = cp_char as u32;
+        if cp >= 0x100000 || cp < 0x80 {
+            continue;
+        }
+
+        let value = (value_bits & 3) as u8;
+        if let Some(start) = run_start {
+            if cp == run_end && value == run_value {
+                run_end += 1;
+                continue;
+            }
+
+            let run_len = run_end - start;
+            let delta = start - prev_end;
+            emit_leb128(delta, &mut buffer);
+            emit_leb128(run_len, &mut buffer);
+            emit_bits(2, run_value as u64, &mut buffer);
+            prev_end = run_end;
+        }
+
+        run_start = Some(cp);
+        run_end = cp + 1;
+        run_value = value;
+    }
+
+    if let Some(start) = run_start {
+        let run_len = run_end - start;
+        let delta = start - prev_end;
+        emit_leb128(delta, &mut buffer);
+        emit_leb128(run_len, &mut buffer);
+        emit_bits(2, run_value as u64, &mut buffer);
+    }
+
+    emit_leb128(MAX_CODEPOINT, &mut buffer);
+    emit_leb128(MAX_CODEPOINT, &mut buffer);
+    emit_bits(2, 0, &mut buffer);
+    flush_bits(&mut buffer);
+
+    let bytes = buffer.len();
+    let total_len = bytes + 2; // account for padding
+
+    let out_dir = PathBuf::from(env::var("OUT_DIR")?);
+    let out_path = out_dir.join("table.rs");
+    let out_file = File::create(&out_path)?;
+    let mut writer = BufWriter::new(out_file);
+
+    writeln!(writer, "// Code generated by build.rs; DO NOT EDIT.")?;
+    writeln!(
+        writer,
+        "pub(crate) static IDENTIFIER_TABLE: [u8; {total_len}] = ["
+    )?;
+
+    for idx in 0..bytes {
+        if idx % BYTES_PER_LINE == 0 {
+            write!(writer, "\t")?;
+        }
+
+        write!(writer, "0x{:02x},", buffer[idx])?;
+
+        if idx % BYTES_PER_LINE == BYTES_PER_LINE - 1 || idx + 1 == bytes {
+            writeln!(writer)?;
+        } else {
+            write!(writer, " ")?;
+        }
+    }
+
+    writeln!(writer, "\t0x00, 0x00, // pad to 8 bytes")?;
+    writeln!(writer, "];")?;
+    writer.flush()?;
+
+    Ok(())
+}

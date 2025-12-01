@@ -1,0 +1,598 @@
+    Finished `bench` profile [optimized] target(s) in 0.09s
+Gnuplot not found, using plotters backend
+Benchmarking 0% ascii/baseline/32
+Benchmarking 0% ascii/baseline/32: Warming up for 3.0000 s
+Benchmarking 0% ascii/baseline/32: Collecting 100 samples in estimated 5.0007 s (27M iterations)
+Benchmarking 0% ascii/baseline/32: Analyzing
+0% ascii/baseline/32    time:   [182.62 ns 183.09 ns 183.53 ns]
+                        change: [+9.2660% +9.6023% +9.9228%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 0% ascii/delta-encoded/32
+Benchmarking 0% ascii/delta-encoded/32: Warming up for 3.0000 s
+Benchmarking 0% ascii/delta-encoded/32: Collecting 100 samples in estimated 5.0357 s (192k iterations)
+Benchmarking 0% ascii/delta-encoded/32: Analyzing
+0% ascii/delta-encoded/32
+                        time:   [25.870 µs 25.897 µs 25.928 µs]
+                        change: [-1.5716% -1.3960% -1.2420%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking 0% ascii/run-indexed/32
+Benchmarking 0% ascii/run-indexed/32: Warming up for 3.0000 s
+Benchmarking 0% ascii/run-indexed/32: Collecting 100 samples in estimated 5.0015 s (7.0M iterations)
+Benchmarking 0% ascii/run-indexed/32: Analyzing
+0% ascii/run-indexed/32 time:   [702.30 ns 703.50 ns 704.79 ns]
+                        change: [+2.7249% +2.9080% +3.0845%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 0% ascii/unicode-id-start/32
+Benchmarking 0% ascii/unicode-id-start/32: Warming up for 3.0000 s
+Benchmarking 0% ascii/unicode-id-start/32: Collecting 100 samples in estimated 5.0004 s (33M iterations)
+Benchmarking 0% ascii/unicode-id-start/32: Analyzing
+0% ascii/unicode-id-start/32
+                        time:   [150.35 ns 150.62 ns 150.91 ns]
+                        change: [+12.226% +12.613% +13.017%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 0% ascii/unicode-id-trie-rle/32
+Benchmarking 0% ascii/unicode-id-trie-rle/32: Warming up for 3.0000 s
+Benchmarking 0% ascii/unicode-id-trie-rle/32: Collecting 100 samples in estimated 5.0010 s (14M iterations)
+Benchmarking 0% ascii/unicode-id-trie-rle/32: Analyzing
+0% ascii/unicode-id-trie-rle/32
+                        time:   [341.81 ns 342.28 ns 342.82 ns]
+                        change: [-2.1207% -1.9467% -1.7406%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking 0% ascii/baseline/128
+Benchmarking 0% ascii/baseline/128: Warming up for 3.0000 s
+Benchmarking 0% ascii/baseline/128: Collecting 100 samples in estimated 5.0013 s (13M iterations)
+Benchmarking 0% ascii/baseline/128: Analyzing
+0% ascii/baseline/128   time:   [376.50 ns 377.33 ns 378.32 ns]
+                        change: [+3.4465% +3.7128% +3.9652%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 0% ascii/delta-encoded/128
+Benchmarking 0% ascii/delta-encoded/128: Warming up for 3.0000 s
+Benchmarking 0% ascii/delta-encoded/128: Collecting 100 samples in estimated 5.0629 s (45k iterations)
+Benchmarking 0% ascii/delta-encoded/128: Analyzing
+0% ascii/delta-encoded/128
+                        time:   [110.79 µs 110.87 µs 110.97 µs]
+                        change: [-1.3142% -1.1153% -0.9002%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 0% ascii/run-indexed/128
+Benchmarking 0% ascii/run-indexed/128: Warming up for 3.0000 s
+Benchmarking 0% ascii/run-indexed/128: Collecting 100 samples in estimated 5.0051 s (2.0M iterations)
+Benchmarking 0% ascii/run-indexed/128: Analyzing
+0% ascii/run-indexed/128
+                        time:   [2.4898 µs 2.4934 µs 2.4971 µs]
+                        change: [-0.6272% -0.4730% -0.3273%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 0% ascii/unicode-id-start/128
+Benchmarking 0% ascii/unicode-id-start/128: Warming up for 3.0000 s
+Benchmarking 0% ascii/unicode-id-start/128: Collecting 100 samples in estimated 5.0002 s (12M iterations)
+Benchmarking 0% ascii/unicode-id-start/128: Analyzing
+0% ascii/unicode-id-start/128
+                        time:   [414.20 ns 414.91 ns 415.69 ns]
+                        change: [+6.7592% +7.0320% +7.3687%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 0% ascii/unicode-id-trie-rle/128
+Benchmarking 0% ascii/unicode-id-trie-rle/128: Warming up for 3.0000 s
+Benchmarking 0% ascii/unicode-id-trie-rle/128: Collecting 100 samples in estimated 5.0030 s (3.6M iterations)
+Benchmarking 0% ascii/unicode-id-trie-rle/128: Analyzing
+0% ascii/unicode-id-trie-rle/128
+                        time:   [1.3686 µs 1.3733 µs 1.3782 µs]
+                        change: [+0.4438% +0.7940% +1.1850%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 0% ascii/baseline/512
+Benchmarking 0% ascii/baseline/512: Warming up for 3.0000 s
+Benchmarking 0% ascii/baseline/512: Collecting 100 samples in estimated 5.0056 s (4.4M iterations)
+Benchmarking 0% ascii/baseline/512: Analyzing
+0% ascii/baseline/512   time:   [1.1131 µs 1.1140 µs 1.1149 µs]
+                        change: [+2.3708% +2.5808% +2.7927%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 0% ascii/delta-encoded/512
+Benchmarking 0% ascii/delta-encoded/512: Warming up for 3.0000 s
+Benchmarking 0% ascii/delta-encoded/512: Collecting 100 samples in estimated 6.8262 s (15k iterations)
+Benchmarking 0% ascii/delta-encoded/512: Analyzing
+0% ascii/delta-encoded/512
+                        time:   [449.60 µs 450.03 µs 450.51 µs]
+                        change: [+0.5504% +0.6775% +0.8138%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 0% ascii/run-indexed/512
+Benchmarking 0% ascii/run-indexed/512: Warming up for 3.0000 s
+Benchmarking 0% ascii/run-indexed/512: Collecting 100 samples in estimated 5.0007 s (515k iterations)
+Benchmarking 0% ascii/run-indexed/512: Analyzing
+0% ascii/run-indexed/512
+                        time:   [9.6075 µs 9.6151 µs 9.6236 µs]
+                        change: [-0.7822% -0.4125% -0.1289%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Benchmarking 0% ascii/unicode-id-start/512
+Benchmarking 0% ascii/unicode-id-start/512: Warming up for 3.0000 s
+Benchmarking 0% ascii/unicode-id-start/512: Collecting 100 samples in estimated 5.0046 s (3.7M iterations)
+Benchmarking 0% ascii/unicode-id-start/512: Analyzing
+0% ascii/unicode-id-start/512
+                        time:   [1.3538 µs 1.3550 µs 1.3564 µs]
+                        change: [-1.7897% -0.9545% -0.3226%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 0% ascii/unicode-id-trie-rle/512
+Benchmarking 0% ascii/unicode-id-trie-rle/512: Warming up for 3.0000 s
+Benchmarking 0% ascii/unicode-id-trie-rle/512: Collecting 100 samples in estimated 5.0092 s (869k iterations)
+Benchmarking 0% ascii/unicode-id-trie-rle/512: Analyzing
+0% ascii/unicode-id-trie-rle/512
+                        time:   [5.5143 µs 5.5329 µs 5.5533 µs]
+                        change: [+1.1675% +1.8195% +2.5267%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+
+Gnuplot not found, using plotters backend
+Benchmarking 10% ascii/baseline/32
+Benchmarking 10% ascii/baseline/32: Warming up for 3.0000 s
+Benchmarking 10% ascii/baseline/32: Collecting 100 samples in estimated 5.0005 s (33M iterations)
+Benchmarking 10% ascii/baseline/32: Analyzing
+10% ascii/baseline/32   time:   [144.64 ns 144.81 ns 144.98 ns]
+                        change: [+0.1787% +0.3494% +0.5248%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 10% ascii/delta-encoded/32
+Benchmarking 10% ascii/delta-encoded/32: Warming up for 3.0000 s
+Benchmarking 10% ascii/delta-encoded/32: Collecting 100 samples in estimated 5.0246 s (197k iterations)
+Benchmarking 10% ascii/delta-encoded/32: Analyzing
+10% ascii/delta-encoded/32
+                        time:   [25.175 µs 25.197 µs 25.216 µs]
+                        change: [-1.2355% -0.9744% -0.7254%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 10% ascii/run-indexed/32
+Benchmarking 10% ascii/run-indexed/32: Warming up for 3.0000 s
+Benchmarking 10% ascii/run-indexed/32: Collecting 100 samples in estimated 5.0008 s (8.0M iterations)
+Benchmarking 10% ascii/run-indexed/32: Analyzing
+10% ascii/run-indexed/32
+                        time:   [623.04 ns 623.97 ns 624.98 ns]
+                        change: [+2.5543% +2.7724% +2.9893%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 10% ascii/unicode-id-start/32
+Benchmarking 10% ascii/unicode-id-start/32: Warming up for 3.0000 s
+Benchmarking 10% ascii/unicode-id-start/32: Collecting 100 samples in estimated 5.0001 s (28M iterations)
+Benchmarking 10% ascii/unicode-id-start/32: Analyzing
+10% ascii/unicode-id-start/32
+                        time:   [176.59 ns 176.77 ns 176.96 ns]
+                        change: [+2.6706% +2.8740% +3.0554%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 10% ascii/unicode-id-trie-rle/32
+Benchmarking 10% ascii/unicode-id-trie-rle/32: Warming up for 3.0000 s
+Benchmarking 10% ascii/unicode-id-trie-rle/32: Collecting 100 samples in estimated 5.0001 s (16M iterations)
+Benchmarking 10% ascii/unicode-id-trie-rle/32: Analyzing
+10% ascii/unicode-id-trie-rle/32
+                        time:   [312.78 ns 313.48 ns 314.31 ns]
+                        change: [-0.3733% -0.0574% +0.3256%] (p = 0.75 > 0.05)
+                        No change in performance detected.
+Benchmarking 10% ascii/baseline/128
+Benchmarking 10% ascii/baseline/128: Warming up for 3.0000 s
+Benchmarking 10% ascii/baseline/128: Collecting 100 samples in estimated 5.0013 s (15M iterations)
+Benchmarking 10% ascii/baseline/128: Analyzing
+10% ascii/baseline/128  time:   [324.84 ns 325.72 ns 326.62 ns]
+                        change: [+1.6739% +1.9344% +2.2317%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 10% ascii/delta-encoded/128
+Benchmarking 10% ascii/delta-encoded/128: Warming up for 3.0000 s
+Benchmarking 10% ascii/delta-encoded/128: Collecting 100 samples in estimated 5.0055 s (50k iterations)
+Benchmarking 10% ascii/delta-encoded/128: Analyzing
+10% ascii/delta-encoded/128
+                        time:   [98.635 µs 98.797 µs 98.946 µs]
+                        change: [-2.4646% -2.2254% -2.0092%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking 10% ascii/run-indexed/128
+Benchmarking 10% ascii/run-indexed/128: Warming up for 3.0000 s
+Benchmarking 10% ascii/run-indexed/128: Collecting 100 samples in estimated 5.0064 s (2.2M iterations)
+Benchmarking 10% ascii/run-indexed/128: Analyzing
+10% ascii/run-indexed/128
+                        time:   [2.1822 µs 2.1848 µs 2.1875 µs]
+                        change: [-0.8993% -0.7192% -0.5209%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 10% ascii/unicode-id-start/128
+Benchmarking 10% ascii/unicode-id-start/128: Warming up for 3.0000 s
+Benchmarking 10% ascii/unicode-id-start/128: Collecting 100 samples in estimated 5.0003 s (14M iterations)
+Benchmarking 10% ascii/unicode-id-start/128: Analyzing
+10% ascii/unicode-id-start/128
+                        time:   [351.44 ns 352.52 ns 353.45 ns]
+                        change: [+0.2188% +0.5794% +0.9479%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 10% ascii/unicode-id-trie-rle/128
+Benchmarking 10% ascii/unicode-id-trie-rle/128: Warming up for 3.0000 s
+Benchmarking 10% ascii/unicode-id-trie-rle/128: Collecting 100 samples in estimated 5.0029 s (3.9M iterations)
+Benchmarking 10% ascii/unicode-id-trie-rle/128: Analyzing
+10% ascii/unicode-id-trie-rle/128
+                        time:   [1.2592 µs 1.2609 µs 1.2628 µs]
+                        change: [+2.4036% +2.8706% +3.3140%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 10% ascii/baseline/512
+Benchmarking 10% ascii/baseline/512: Warming up for 3.0000 s
+Benchmarking 10% ascii/baseline/512: Collecting 100 samples in estimated 5.0016 s (5.2M iterations)
+Benchmarking 10% ascii/baseline/512: Analyzing
+10% ascii/baseline/512  time:   [959.58 ns 962.01 ns 964.50 ns]
+                        change: [+1.7673% +2.2679% +2.8526%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 10% ascii/delta-encoded/512
+Benchmarking 10% ascii/delta-encoded/512: Warming up for 3.0000 s
+Benchmarking 10% ascii/delta-encoded/512: Collecting 100 samples in estimated 6.2496 s (15k iterations)
+Benchmarking 10% ascii/delta-encoded/512: Analyzing
+10% ascii/delta-encoded/512
+                        time:   [407.29 µs 407.46 µs 407.63 µs]
+                        change: [+0.5434% +0.8173% +1.0269%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 10% ascii/run-indexed/512
+Benchmarking 10% ascii/run-indexed/512: Warming up for 3.0000 s
+Benchmarking 10% ascii/run-indexed/512: Collecting 100 samples in estimated 5.0246 s (586k iterations)
+Benchmarking 10% ascii/run-indexed/512: Analyzing
+10% ascii/run-indexed/512
+                        time:   [8.5020 µs 8.5071 µs 8.5121 µs]
+                        change: [+0.7406% +0.8322% +0.9249%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 10% ascii/unicode-id-start/512
+Benchmarking 10% ascii/unicode-id-start/512: Warming up for 3.0000 s
+Benchmarking 10% ascii/unicode-id-start/512: Collecting 100 samples in estimated 5.0040 s (4.2M iterations)
+Benchmarking 10% ascii/unicode-id-start/512: Analyzing
+10% ascii/unicode-id-start/512
+                        time:   [1.1659 µs 1.1693 µs 1.1729 µs]
+                        change: [+1.8322% +2.2546% +2.7198%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 10% ascii/unicode-id-trie-rle/512
+Benchmarking 10% ascii/unicode-id-trie-rle/512: Warming up for 3.0000 s
+Benchmarking 10% ascii/unicode-id-trie-rle/512: Collecting 100 samples in estimated 5.0218 s (980k iterations)
+Benchmarking 10% ascii/unicode-id-trie-rle/512: Analyzing
+10% ascii/unicode-id-trie-rle/512
+                        time:   [5.0522 µs 5.0703 µs 5.0884 µs]
+                        change: [+2.9676% +3.4038% +3.9383%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+
+Gnuplot not found, using plotters backend
+Benchmarking 100% ascii/baseline/32
+Benchmarking 100% ascii/baseline/32: Warming up for 3.0000 s
+Benchmarking 100% ascii/baseline/32: Collecting 100 samples in estimated 5.0007 s (31M iterations)
+Benchmarking 100% ascii/baseline/32: Analyzing
+100% ascii/baseline/32  time:   [161.34 ns 161.51 ns 161.68 ns]
+                        change: [+0.4755% +0.6687% +0.8543%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 100% ascii/delta-encoded/32
+Benchmarking 100% ascii/delta-encoded/32: Warming up for 3.0000 s
+Benchmarking 100% ascii/delta-encoded/32: Collecting 100 samples in estimated 5.0000 s (28M iterations)
+Benchmarking 100% ascii/delta-encoded/32: Analyzing
+100% ascii/delta-encoded/32
+                        time:   [174.41 ns 174.57 ns 174.73 ns]
+                        change: [+0.2804% +0.5759% +0.8327%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 100% ascii/run-indexed/32
+Benchmarking 100% ascii/run-indexed/32: Warming up for 3.0000 s
+Benchmarking 100% ascii/run-indexed/32: Collecting 100 samples in estimated 5.0004 s (28M iterations)
+Benchmarking 100% ascii/run-indexed/32: Analyzing
+100% ascii/run-indexed/32
+                        time:   [178.97 ns 179.38 ns 179.80 ns]
+                        change: [+1.4395% +1.7619% +2.0823%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 100% ascii/unicode-id-start/32
+Benchmarking 100% ascii/unicode-id-start/32: Warming up for 3.0000 s
+Benchmarking 100% ascii/unicode-id-start/32: Collecting 100 samples in estimated 5.0002 s (31M iterations)
+Benchmarking 100% ascii/unicode-id-start/32: Analyzing
+100% ascii/unicode-id-start/32
+                        time:   [150.24 ns 150.73 ns 151.37 ns]
+                        change: [-0.1718% +0.3685% +0.9273%] (p = 0.20 > 0.05)
+                        No change in performance detected.
+Benchmarking 100% ascii/unicode-id-trie-rle/32
+Benchmarking 100% ascii/unicode-id-trie-rle/32: Warming up for 3.0000 s
+Benchmarking 100% ascii/unicode-id-trie-rle/32: Collecting 100 samples in estimated 5.0000 s (142M iterations)
+Benchmarking 100% ascii/unicode-id-trie-rle/32: Analyzing
+100% ascii/unicode-id-trie-rle/32
+                        time:   [34.529 ns 34.628 ns 34.761 ns]
+                        change: [-3.8876% -2.8084% -1.9546%] (p = 0.00 < 0.05)
+                        Performance has improved.
+Benchmarking 100% ascii/baseline/128
+Benchmarking 100% ascii/baseline/128: Warming up for 3.0000 s
+Benchmarking 100% ascii/baseline/128: Collecting 100 samples in estimated 5.0002 s (19M iterations)
+Benchmarking 100% ascii/baseline/128: Analyzing
+100% ascii/baseline/128 time:   [263.43 ns 263.81 ns 264.17 ns]
+                        change: [-0.2194% +0.0671% +0.3534%] (p = 0.65 > 0.05)
+                        No change in performance detected.
+Benchmarking 100% ascii/delta-encoded/128
+Benchmarking 100% ascii/delta-encoded/128: Warming up for 3.0000 s
+Benchmarking 100% ascii/delta-encoded/128: Collecting 100 samples in estimated 5.0017 s (10M iterations)
+Benchmarking 100% ascii/delta-encoded/128: Analyzing
+100% ascii/delta-encoded/128
+                        time:   [489.27 ns 490.07 ns 490.83 ns]
+Benchmarking 100% ascii/run-indexed/128
+Benchmarking 100% ascii/run-indexed/128: Warming up for 3.0000 s
+Benchmarking 100% ascii/run-indexed/128: Collecting 100 samples in estimated 5.0004 s (22M iterations)
+Benchmarking 100% ascii/run-indexed/128: Analyzing
+100% ascii/run-indexed/128
+                        time:   [228.12 ns 228.43 ns 228.77 ns]
+Benchmarking 100% ascii/unicode-id-start/128
+Benchmarking 100% ascii/unicode-id-start/128: Warming up for 3.0000 s
+Benchmarking 100% ascii/unicode-id-start/128: Collecting 100 samples in estimated 5.0003 s (21M iterations)
+Benchmarking 100% ascii/unicode-id-start/128: Analyzing
+100% ascii/unicode-id-start/128
+                        time:   [247.05 ns 247.69 ns 248.19 ns]
+Benchmarking 100% ascii/unicode-id-trie-rle/128
+Benchmarking 100% ascii/unicode-id-trie-rle/128: Warming up for 3.0000 s
+Benchmarking 100% ascii/unicode-id-trie-rle/128: Collecting 100 samples in estimated 5.0002 s (40M iterations)
+Benchmarking 100% ascii/unicode-id-trie-rle/128: Analyzing
+100% ascii/unicode-id-trie-rle/128
+                        time:   [124.42 ns 124.67 ns 124.89 ns]
+Benchmarking 100% ascii/baseline/512
+Benchmarking 100% ascii/baseline/512: Warming up for 3.0000 s
+Benchmarking 100% ascii/baseline/512: Collecting 100 samples in estimated 5.0017 s (7.5M iterations)
+Benchmarking 100% ascii/baseline/512: Analyzing
+100% ascii/baseline/512 time:   [659.53 ns 660.85 ns 662.13 ns]
+Benchmarking 100% ascii/delta-encoded/512
+Benchmarking 100% ascii/delta-encoded/512: Warming up for 3.0000 s
+Benchmarking 100% ascii/delta-encoded/512: Collecting 100 samples in estimated 5.0042 s (3.4M iterations)
+Benchmarking 100% ascii/delta-encoded/512: Analyzing
+100% ascii/delta-encoded/512
+                        time:   [1.4762 µs 1.4778 µs 1.4795 µs]
+Benchmarking 100% ascii/run-indexed/512
+Benchmarking 100% ascii/run-indexed/512: Warming up for 3.0000 s
+Benchmarking 100% ascii/run-indexed/512: Collecting 100 samples in estimated 5.0025 s (7.7M iterations)
+Benchmarking 100% ascii/run-indexed/512: Analyzing
+100% ascii/run-indexed/512
+                        time:   [644.99 ns 645.80 ns 646.65 ns]
+Benchmarking 100% ascii/unicode-id-start/512
+Benchmarking 100% ascii/unicode-id-start/512: Warming up for 3.0000 s
+Benchmarking 100% ascii/unicode-id-start/512: Collecting 100 samples in estimated 5.0011 s (8.6M iterations)
+Benchmarking 100% ascii/unicode-id-start/512: Analyzing
+100% ascii/unicode-id-start/512
+                        time:   [680.01 ns 708.97 ns 735.11 ns]
+Benchmarking 100% ascii/unicode-id-trie-rle/512
+Benchmarking 100% ascii/unicode-id-trie-rle/512: Warming up for 3.0000 s
+Benchmarking 100% ascii/unicode-id-trie-rle/512: Collecting 100 samples in estimated 5.0002 s (10M iterations)
+Benchmarking 100% ascii/unicode-id-trie-rle/512: Analyzing
+100% ascii/unicode-id-trie-rle/512
+                        time:   [477.18 ns 478.08 ns 479.31 ns]
+
+Gnuplot not found, using plotters backend
+Benchmarking 50% ascii/baseline/32
+Benchmarking 50% ascii/baseline/32: Warming up for 3.0000 s
+Benchmarking 50% ascii/baseline/32: Collecting 100 samples in estimated 5.0008 s (28M iterations)
+Benchmarking 50% ascii/baseline/32: Analyzing
+50% ascii/baseline/32   time:   [207.04 ns 207.65 ns 208.19 ns]
+                        change: [+9.7595% +10.066% +10.364%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 50% ascii/delta-encoded/32
+Benchmarking 50% ascii/delta-encoded/32: Warming up for 3.0000 s
+Benchmarking 50% ascii/delta-encoded/32: Collecting 100 samples in estimated 5.0453 s (389k iterations)
+Benchmarking 50% ascii/delta-encoded/32: Analyzing
+50% ascii/delta-encoded/32
+                        time:   [12.825 µs 12.841 µs 12.858 µs]
+                        change: [-0.9385% -0.7697% -0.5436%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Benchmarking 50% ascii/run-indexed/32
+Benchmarking 50% ascii/run-indexed/32: Warming up for 3.0000 s
+Benchmarking 50% ascii/run-indexed/32: Collecting 100 samples in estimated 5.0019 s (10M iterations)
+Benchmarking 50% ascii/run-indexed/32: Analyzing
+50% ascii/run-indexed/32
+                        time:   [489.39 ns 490.86 ns 492.47 ns]
+                        change: [+1.6914% +1.9795% +2.2552%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 50% ascii/unicode-id-start/32
+Benchmarking 50% ascii/unicode-id-start/32: Warming up for 3.0000 s
+Benchmarking 50% ascii/unicode-id-start/32: Collecting 100 samples in estimated 5.0004 s (27M iterations)
+Benchmarking 50% ascii/unicode-id-start/32: Analyzing
+50% ascii/unicode-id-start/32
+                        time:   [185.14 ns 185.28 ns 185.40 ns]
+                        change: [+12.030% +12.333% +12.632%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 50% ascii/unicode-id-trie-rle/32
+Benchmarking 50% ascii/unicode-id-trie-rle/32: Warming up for 3.0000 s
+Benchmarking 50% ascii/unicode-id-trie-rle/32: Collecting 100 samples in estimated 5.0008 s (25M iterations)
+Benchmarking 50% ascii/unicode-id-trie-rle/32: Analyzing
+50% ascii/unicode-id-trie-rle/32
+                        time:   [191.43 ns 191.70 ns 192.00 ns]
+Benchmarking 50% ascii/baseline/128
+Benchmarking 50% ascii/baseline/128: Warming up for 3.0000 s
+Benchmarking 50% ascii/baseline/128: Collecting 100 samples in estimated 5.0018 s (14M iterations)
+Benchmarking 50% ascii/baseline/128: Analyzing
+50% ascii/baseline/128  time:   [354.87 ns 356.41 ns 358.17 ns]
+                        change: [+12.196% +12.583% +12.985%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 50% ascii/delta-encoded/128
+Benchmarking 50% ascii/delta-encoded/128: Warming up for 3.0000 s
+Benchmarking 50% ascii/delta-encoded/128: Collecting 100 samples in estimated 5.1101 s (91k iterations)
+Benchmarking 50% ascii/delta-encoded/128: Analyzing
+50% ascii/delta-encoded/128
+                        time:   [55.319 µs 55.364 µs 55.415 µs]
+                        change: [-0.2902% -0.1235% +0.0525%] (p = 0.15 > 0.05)
+                        No change in performance detected.
+Benchmarking 50% ascii/run-indexed/128
+Benchmarking 50% ascii/run-indexed/128: Warming up for 3.0000 s
+Benchmarking 50% ascii/run-indexed/128: Collecting 100 samples in estimated 5.0062 s (3.5M iterations)
+Benchmarking 50% ascii/run-indexed/128: Analyzing
+50% ascii/run-indexed/128
+                        time:   [1.3977 µs 1.3999 µs 1.4021 µs]
+                        change: [+2.0372% +3.6672% +4.8771%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 50% ascii/unicode-id-start/128
+Benchmarking 50% ascii/unicode-id-start/128: Warming up for 3.0000 s
+Benchmarking 50% ascii/unicode-id-start/128: Collecting 100 samples in estimated 5.0002 s (14M iterations)
+Benchmarking 50% ascii/unicode-id-start/128: Analyzing
+50% ascii/unicode-id-start/128
+                        time:   [348.33 ns 348.94 ns 349.55 ns]
+                        change: [+13.862% +14.186% +14.483%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 50% ascii/unicode-id-trie-rle/128
+Benchmarking 50% ascii/unicode-id-trie-rle/128: Warming up for 3.0000 s
+Benchmarking 50% ascii/unicode-id-trie-rle/128: Collecting 100 samples in estimated 5.0011 s (6.4M iterations)
+Benchmarking 50% ascii/unicode-id-trie-rle/128: Analyzing
+50% ascii/unicode-id-trie-rle/128
+                        time:   [770.76 ns 773.11 ns 775.55 ns]
+Benchmarking 50% ascii/baseline/512
+Benchmarking 50% ascii/baseline/512: Warming up for 3.0000 s
+Benchmarking 50% ascii/baseline/512: Collecting 100 samples in estimated 5.0051 s (4.9M iterations)
+Benchmarking 50% ascii/baseline/512: Analyzing
+50% ascii/baseline/512  time:   [997.18 ns 1.0033 µs 1.0098 µs]
+                        change: [+12.532% +13.003% +13.437%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Benchmarking 50% ascii/delta-encoded/512
+Benchmarking 50% ascii/delta-encoded/512: Warming up for 3.0000 s
+Benchmarking 50% ascii/delta-encoded/512: Collecting 100 samples in estimated 5.7358 s (25k iterations)
+Benchmarking 50% ascii/delta-encoded/512: Analyzing
+50% ascii/delta-encoded/512
+                        time:   [225.35 µs 225.50 µs 225.65 µs]
+                        change: [-0.6141% -0.2873% -0.0254%] (p = 0.05 > 0.05)
+                        No change in performance detected.
+Benchmarking 50% ascii/run-indexed/512
+Benchmarking 50% ascii/run-indexed/512: Warming up for 3.0000 s
+Benchmarking 50% ascii/run-indexed/512: Collecting 100 samples in estimated 5.0062 s (970k iterations)
+Benchmarking 50% ascii/run-indexed/512: Analyzing
+50% ascii/run-indexed/512
+                        time:   [5.1480 µs 5.1569 µs 5.1651 µs]
+Benchmarking 50% ascii/unicode-id-start/512
+Benchmarking 50% ascii/unicode-id-start/512: Warming up for 3.0000 s
+Benchmarking 50% ascii/unicode-id-start/512: Collecting 100 samples in estimated 5.0024 s (4.4M iterations)
+Benchmarking 50% ascii/unicode-id-start/512: Analyzing
+50% ascii/unicode-id-start/512
+                        time:   [1.1211 µs 1.1227 µs 1.1243 µs]
+Benchmarking 50% ascii/unicode-id-trie-rle/512
+Benchmarking 50% ascii/unicode-id-trie-rle/512: Warming up for 3.0000 s
+Benchmarking 50% ascii/unicode-id-trie-rle/512: Collecting 100 samples in estimated 5.0052 s (1.6M iterations)
+Benchmarking 50% ascii/unicode-id-trie-rle/512: Analyzing
+50% ascii/unicode-id-trie-rle/512
+                        time:   [3.0670 µs 3.0741 µs 3.0820 µs]
+
+Gnuplot not found, using plotters backend
+Benchmarking 90% ascii/baseline/32
+Benchmarking 90% ascii/baseline/32: Warming up for 3.0000 s
+Benchmarking 90% ascii/baseline/32: Collecting 100 samples in estimated 5.0008 s (29M iterations)
+Benchmarking 90% ascii/baseline/32: Analyzing
+90% ascii/baseline/32   time:   [171.61 ns 171.78 ns 171.93 ns]
+Benchmarking 90% ascii/delta-encoded/32
+Benchmarking 90% ascii/delta-encoded/32: Warming up for 3.0000 s
+Benchmarking 90% ascii/delta-encoded/32: Collecting 100 samples in estimated 5.0007 s (5.6M iterations)
+Benchmarking 90% ascii/delta-encoded/32: Analyzing
+90% ascii/delta-encoded/32
+                        time:   [872.65 ns 873.86 ns 875.24 ns]
+Benchmarking 90% ascii/run-indexed/32
+Benchmarking 90% ascii/run-indexed/32: Warming up for 3.0000 s
+Benchmarking 90% ascii/run-indexed/32: Collecting 100 samples in estimated 5.0000 s (25M iterations)
+Benchmarking 90% ascii/run-indexed/32: Analyzing
+90% ascii/run-indexed/32
+                        time:   [196.11 ns 196.37 ns 196.62 ns]
+Benchmarking 90% ascii/unicode-id-start/32
+Benchmarking 90% ascii/unicode-id-start/32: Warming up for 3.0000 s
+Benchmarking 90% ascii/unicode-id-start/32: Collecting 100 samples in estimated 5.0001 s (30M iterations)
+Benchmarking 90% ascii/unicode-id-start/32: Analyzing
+90% ascii/unicode-id-start/32
+                        time:   [174.35 ns 175.37 ns 176.18 ns]
+Benchmarking 90% ascii/unicode-id-trie-rle/32
+Benchmarking 90% ascii/unicode-id-trie-rle/32: Warming up for 3.0000 s
+Benchmarking 90% ascii/unicode-id-trie-rle/32: Collecting 100 samples in estimated 5.0003 s (74M iterations)
+Benchmarking 90% ascii/unicode-id-trie-rle/32: Analyzing
+90% ascii/unicode-id-trie-rle/32
+                        time:   [67.327 ns 67.485 ns 67.628 ns]
+Benchmarking 90% ascii/baseline/128
+Benchmarking 90% ascii/baseline/128: Warming up for 3.0000 s
+Benchmarking 90% ascii/baseline/128: Collecting 100 samples in estimated 5.0009 s (15M iterations)
+Benchmarking 90% ascii/baseline/128: Analyzing
+90% ascii/baseline/128  time:   [323.14 ns 325.71 ns 328.08 ns]
+Benchmarking 90% ascii/delta-encoded/128
+Benchmarking 90% ascii/delta-encoded/128: Warming up for 3.0000 s
+Benchmarking 90% ascii/delta-encoded/128: Collecting 100 samples in estimated 5.0548 s (399k iterations)
+Benchmarking 90% ascii/delta-encoded/128: Analyzing
+90% ascii/delta-encoded/128
+                        time:   [12.489 µs 12.505 µs 12.525 µs]
+Benchmarking 90% ascii/run-indexed/128
+Benchmarking 90% ascii/run-indexed/128: Warming up for 3.0000 s
+Benchmarking 90% ascii/run-indexed/128: Collecting 100 samples in estimated 5.0003 s (10.0M iterations)
+Benchmarking 90% ascii/run-indexed/128: Analyzing
+90% ascii/run-indexed/128
+                        time:   [496.77 ns 497.29 ns 497.79 ns]
+Benchmarking 90% ascii/unicode-id-start/128
+Benchmarking 90% ascii/unicode-id-start/128: Warming up for 3.0000 s
+Benchmarking 90% ascii/unicode-id-start/128: Collecting 100 samples in estimated 5.0009 s (19M iterations)
+Benchmarking 90% ascii/unicode-id-start/128: Analyzing
+90% ascii/unicode-id-start/128
+                        time:   [259.00 ns 262.38 ns 266.53 ns]
+Benchmarking 90% ascii/unicode-id-trie-rle/128
+Benchmarking 90% ascii/unicode-id-trie-rle/128: Warming up for 3.0000 s
+Benchmarking 90% ascii/unicode-id-trie-rle/128: Collecting 100 samples in estimated 5.0012 s (18M iterations)
+Benchmarking 90% ascii/unicode-id-trie-rle/128: Analyzing
+90% ascii/unicode-id-trie-rle/128
+                        time:   [284.11 ns 284.65 ns 285.26 ns]
+Benchmarking 90% ascii/baseline/512
+Benchmarking 90% ascii/baseline/512: Warming up for 3.0000 s
+Benchmarking 90% ascii/baseline/512: Collecting 100 samples in estimated 5.0038 s (5.9M iterations)
+Benchmarking 90% ascii/baseline/512: Analyzing
+90% ascii/baseline/512  time:   [842.32 ns 843.60 ns 845.02 ns]
+Benchmarking 90% ascii/delta-encoded/512
+Benchmarking 90% ascii/delta-encoded/512: Warming up for 3.0000 s
+Benchmarking 90% ascii/delta-encoded/512: Collecting 100 samples in estimated 5.0038 s (111k iterations)
+Benchmarking 90% ascii/delta-encoded/512: Analyzing
+90% ascii/delta-encoded/512
+                        time:   [44.663 µs 44.694 µs 44.726 µs]
+Benchmarking 90% ascii/run-indexed/512
+Benchmarking 90% ascii/run-indexed/512: Warming up for 3.0000 s
+Benchmarking 90% ascii/run-indexed/512: Collecting 100 samples in estimated 5.0081 s (2.9M iterations)
+Benchmarking 90% ascii/run-indexed/512: Analyzing
+90% ascii/run-indexed/512
+                        time:   [1.6894 µs 1.6907 µs 1.6921 µs]
+Benchmarking 90% ascii/unicode-id-start/512
+Benchmarking 90% ascii/unicode-id-start/512: Warming up for 3.0000 s
+Benchmarking 90% ascii/unicode-id-start/512: Collecting 100 samples in estimated 5.0019 s (6.4M iterations)
+Benchmarking 90% ascii/unicode-id-start/512: Analyzing
+90% ascii/unicode-id-start/512
+                        time:   [777.56 ns 778.68 ns 779.95 ns]
+Benchmarking 90% ascii/unicode-id-trie-rle/512
+Benchmarking 90% ascii/unicode-id-trie-rle/512: Warming up for 3.0000 s
+Benchmarking 90% ascii/unicode-id-trie-rle/512: Collecting 100 samples in estimated 5.0040 s (4.5M iterations)
+Benchmarking 90% ascii/unicode-id-trie-rle/512: Analyzing
+90% ascii/unicode-id-trie-rle/512
+                        time:   [1.1061 µs 1.1085 µs 1.1109 µs]
+
+
+running 3 tests
+test tests::str_and_slice_identifier_agree ... ignored
+test tests::unicode_identifier_class_matches_derived_core_properties ... ignored
+test tests::unicode_identifier_class_proptest ... ignored
+
+test result: ok. 0 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test tests::str_and_slice_identifier_agree ... ignored
+test tests::unicode_identifier_class_matches_derived_core_properties ... ignored
+test tests::unicode_identifier_class_proptest ... ignored
+
+test result: ok. 0 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 6 tests
+test tests::parse_breaks_cleanly_on_empty_input ... ignored
+test tests::parse_correctly_parses_codepoint_ranges_and_applies_properties ... ignored
+test tests::parse_doesnt_crash ... ignored
+test tests::parse_errors_on_invalid_codepoints ... ignored
+test tests::parse_errors_when_missing_semicolon ... ignored
+test tests::parse_propagates_io_errors ... ignored
+
+test result: ok. 0 passed; 0 failed; 6 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test tests::str_and_slice_identifier_agree ... ignored
+test tests::unicode_identifier_class_matches_derived_core_properties ... ignored
+test tests::unicode_identifier_class_proptest ... ignored
+
+test result: ok. 0 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test tests::str_and_slice_identifier_agree ... ignored
+test tests::unicode_identifier_class_matches_derived_core_properties ... ignored
+test tests::unicode_identifier_class_proptest ... ignored
+
+test result: ok. 0 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 3 tests
+test tests::str_and_slice_identifier_agree ... ignored
+test tests::unicode_identifier_class_matches_derived_core_properties ... ignored
+test tests::unicode_identifier_class_proptest ... ignored
+
+test result: ok. 0 passed; 0 failed; 3 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

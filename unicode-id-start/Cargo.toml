@@ -1,0 +1,13 @@
+[package]
+name = "unicode-id-start-harness"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+unicode-id-start = { git = "https://github.com/oxc-project/unicode-id-start", rev = "d0ab8e55bc03bf60178688fbb7d9f0ce48bca94f" }
+
+[dev-dependencies]
+unicode-id-trie-rle-derived-core-properties.path = "../derived_core_properties"
+proptest = { version = "1", default-features = false, features = ["std"] }
+criterion = { version = "0.3", features = ["html_reports"] }

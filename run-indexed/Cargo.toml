@@ -1,0 +1,14 @@
+[package]
+name = "run-indexed"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[build-dependencies]
+unicode-id-trie-rle-derived-core-properties.path = "../derived_core_properties"
+
+[dependencies]
+
+[dev-dependencies]
+unicode-id-trie-rle-derived-core-properties.path = "../derived_core_properties"
+proptest = { version = "1", default-features = false, features = ["std"] }
