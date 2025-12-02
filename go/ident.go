@@ -1,5 +1,5 @@
 //go:generate go run github.com/aeldidi/unicode-id-trie-rle/go/generate -i ../DerivedCoreProperties.txt -o ident_generated.go
-package main
+package unicode_id_trie_rle
 
 import "sort"
 

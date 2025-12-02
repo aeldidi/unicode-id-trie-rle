@@ -1,4 +1,4 @@
-package main
+package unicode_id_trie_rle
 
 import (
 	"bufio"
