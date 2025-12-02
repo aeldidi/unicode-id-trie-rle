@@ -1,4 +1,4 @@
-//go:generate go run unicode_idents/go/generate -i ../DerivedCoreProperties.txt -o ident_generated.go
+//go:generate go run github.com/aeldidi/unicode-id-trie-rle/generate -i ../DerivedCoreProperties.txt -o ident_generated.go
 package main
 
 import "sort"
