@@ -1,3 +1,3 @@
-module unicode_idents/go
+module github.com/aeldidi/unicode-id-trie-rle
 
 go 1.23.3
