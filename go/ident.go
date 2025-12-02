@@ -3,11 +3,18 @@ package main
 
 import "sort"
 
+// A Unicode identifier class, as returned by UnicodeIdentifierClass. Use
+// `this & Start` to query for `*_Start` properties and `this & Continue` to
+// query for `*_Continue` properties.
 type IdentifierClass byte
 
 const (
 	Other IdentifierClass = iota
+	// An IdentifierClass with this bit set has either `ID_Start`,
+	// `XID_Start`, or both.
 	Start
+	// An IdentifierClass with this bit set has either `ID_Continue`,
+	// `XID_Continue`, or both.
 	Continue
 )
 
@@ -58,6 +65,8 @@ func leafValue(l leaf, offset uint16) IdentifierClass {
 	return values[idx-1]
 }
 
+// Returns whether the codepoint specified has the properties `ID_Start`,
+// `XID_Start` or the properties `ID_Continue` or `XID_Continue`.
 func UnicodeIdentifierClass(cp rune) IdentifierClass {
 	if cp < 0 {
 		return Other
@@ -86,6 +95,13 @@ const (
 	ZWJ  = 0x200d
 )
 
+// Checks if a codepoint array is a unicode identifier, defined by
+// Unicode Standard Annex #31.
+//
+// This function implements the "Default Identifiers" specification,
+// specifically `UAX31-R1-1`, which does not add or modify any of the
+// character sequences or their properties. See the specification for more
+// details.
 func IsIdent(s []rune) bool {
 	if len(s) == 0 {
 		return false
