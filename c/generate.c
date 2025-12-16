@@ -111,10 +111,10 @@ static void load_table(FILE *file, uint8_t *table, size_t table_len)
 		char *prop = trim(semi + 1);
 
 		uint8_t bits = 0;
-		if (strstr(prop, "ID_Start")) {
+		if (strstr(prop, "XID_Start")) {
 			bits |= 1;
 		}
-		if (strstr(prop, "ID_Continue")) {
+		if (strstr(prop, "XID_Continue")) {
 			bits |= 2;
 		}
 		if (bits == 0) {

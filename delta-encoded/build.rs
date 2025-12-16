@@ -85,20 +85,15 @@ fn main() -> Result<(), Box<dyn Error>> {
     // Convert the parsed file into a map from codepoint => 2 bit value
     let parsed = parsed
         .iter()
-        .filter(|(_, v)| {
-            v.contains("ID_Start")
-                || v.contains("XID_Start")
-                || v.contains("ID_Continue")
-                || v.contains("XID_Continue")
-        })
+        .filter(|(_, v)| v.contains("XID_Start") || v.contains("XID_Continue"))
         .map(|(k, v)| {
             (
                 *k,
                 v.iter()
                     .map(|x| {
-                        if x.contains("ID_Start") {
+                        if x.contains("XID_Start") {
                             1 << 0
-                        } else if x.contains("ID_Continue") {
+                        } else if x.contains("XID_Continue") {
                             1 << 1
                         } else {
                             0

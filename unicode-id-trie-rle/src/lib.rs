@@ -108,10 +108,9 @@ const fn ascii_table() -> [u8; 128] {
 /// Checks if a codepoint is a unicode identifier, defined by
 /// Unicode Standard Annex #31.
 ///
-/// This function implements the "Default Identifiers" specification,
-/// specifically `UAX31-R1-1`, which does not add or modify any of the
-/// character sequences or their properties. See the specification for more
-/// details.
+/// This function implements the "Default Identifiers" specification, labeled
+/// `UAX31-R1-1` in the document, meaning the `XID_Start` and `XID_Continue`
+/// properties are used in determining whether something is a valid identifier.
 #[inline]
 pub fn is_identifier(cp: &[char]) -> bool {
     if cp.is_empty() {
@@ -138,10 +137,9 @@ pub fn is_identifier(cp: &[char]) -> bool {
 /// Checks if a given string is a unicode identifier, defined by Unicode
 /// Standard Annex #31.
 ///
-/// This function implements the "Default Identifiers" specification,
-/// specifically `UAX31-R1-1`, which does not add or modify any of the
-/// character sequences or their properties. See the specification for more
-/// details.
+/// This function implements the "Default Identifiers" specification, labeled
+/// `UAX31-R1-1` in the document, meaning the `XID_Start` and `XID_Continue`
+/// properties are used in determining whether something is a valid identifier.
 #[inline]
 pub fn str_is_identifier(s: &str) -> bool {
     let mut iter = s.chars();
@@ -195,10 +193,10 @@ mod tests {
                 for (ch, props) in parsed {
                     let mut bits = 0u8;
                     for prop in props {
-                        if prop.contains("ID_Start") {
+                        if prop.contains("XID_Start") {
                             bits |= IDENTIFIER_START;
                         }
-                        if prop.contains("ID_Continue") {
+                        if prop.contains("XID_Continue") {
                             bits |= IDENTIFIER_CONTINUE;
                         }
                     }

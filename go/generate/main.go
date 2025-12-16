@@ -80,10 +80,10 @@ func buildTable(path string) ([]byte, error) {
 
 		prop := strings.TrimSpace(parts[1])
 		var bits byte
-		if strings.Contains(prop, "ID_Start") {
+		if strings.Contains(prop, "XID_Start") {
 			bits |= 1
 		}
-		if strings.Contains(prop, "ID_Continue") {
+		if strings.Contains(prop, "XID_Continue") {
 			bits |= 2
 		}
 		if bits == 0 {

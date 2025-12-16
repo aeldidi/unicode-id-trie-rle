@@ -4,17 +4,15 @@ package unicode_id_trie_rle
 import "sort"
 
 // A Unicode identifier class, as returned by UnicodeIdentifierClass. Use
-// `this & Start` to query for `*_Start` properties and `this & Continue` to
-// query for `*_Continue` properties.
+// `this & Start` to query for the `XID_Start` property and `this & Continue` to
+// query for the `XID_Continue` property.
 type IdentifierClass byte
 
 const (
 	Other IdentifierClass = iota
-	// An IdentifierClass with this bit set has either `ID_Start`,
-	// `XID_Start`, or both.
+	// An IdentifierClass with this bit set has the `XID_Start` property.
 	Start
-	// An IdentifierClass with this bit set has either `ID_Continue`,
-	// `XID_Continue`, or both.
+	// An IdentifierClass with this bit set has the `XID_Continue` property.
 	Continue
 )
 
@@ -65,8 +63,8 @@ func leafValue(l leaf, offset uint16) IdentifierClass {
 	return values[idx-1]
 }
 
-// Returns whether the codepoint specified has the properties `ID_Start`,
-// `XID_Start` or the properties `ID_Continue` or `XID_Continue`.
+// Returns whether the codepoint specified has the properties `XID_Start` or
+// `XID_Continue`.
 func UnicodeIdentifierClass(cp rune) IdentifierClass {
 	if cp < 0 {
 		return Other

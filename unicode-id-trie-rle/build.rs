@@ -31,10 +31,10 @@ fn build_table() -> Result<Vec<u8>, Box<dyn Error>> {
 
         let mut bits = 0u8;
         for prop in props {
-            if prop.contains("ID_Start") {
+            if prop.contains("XID_Start") {
                 bits |= 1;
             }
-            if prop.contains("ID_Continue") {
+            if prop.contains("XID_Continue") {
                 bits |= 2;
             }
         }

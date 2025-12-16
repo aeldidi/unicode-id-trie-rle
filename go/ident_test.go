@@ -74,10 +74,10 @@ func derivedIdentifierTable(t *testing.T) []IdentifierClass {
 
 		prop := strings.TrimSpace(parts[1])
 		var bits IdentifierClass
-		if strings.Contains(prop, "ID_Start") {
+		if strings.Contains(prop, "XID_Start") {
 			bits |= Start
 		}
-		if strings.Contains(prop, "ID_Continue") {
+		if strings.Contains(prop, "XID_Continue") {
 			bits |= Continue
 		}
 		if bits == 0 {

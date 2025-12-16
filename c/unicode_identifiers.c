@@ -5,8 +5,11 @@
 #include "unicode_data.h"
 
 enum unicode_identifier_property {
+	// The codepoint doesn't have properties XID_Start or XID_Continue.
 	IDENTIFIER_OTHER = 0,
+	// The codepoint doesn't have the XID_Start property
 	IDENTIFIER_START = 1,
+	// The codepoint doesn't have the XID_Continue property
 	IDENTIFIER_CONTINUE = 2,
 };
 
@@ -50,6 +53,10 @@ static inline uint8_t ascii_class(uint32_t cp)
 	return ASCII_TABLE[cp];
 }
 
+// Returns a value signifying whether a codepoint has the properties XID_Start
+// or XID_Continue. The return value will have the `IDENTIFIER_START` bit set
+// if the codepoint has the XID_Start property, and the `IDENTIFIER_CONTINUE`
+// bit set if the codepoint has the XID_Continue property.
 uint8_t unicode_identifier_class(uint32_t cp)
 {
 	if (cp < START_CODEPOINT) {

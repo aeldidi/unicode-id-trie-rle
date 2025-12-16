@@ -30,7 +30,7 @@ checksum = "c08606f8c3cbf4ce6ec8e28fb0014a2c086708fe954eaa885384a6165172e7e8"
 
 [[package]]
 name = "baseline"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "proptest",
  "unicode-id-trie-rle-derived-core-properties",
@@ -38,7 +38,7 @@ dependencies = [
 
 [[package]]
 name = "benchmark"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "baseline",
  "criterion",
@@ -173,7 +173,7 @@ dependencies = [
 
 [[package]]
 name = "delta-encoded"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "proptest",
  "unicode-id-trie-rle-derived-core-properties",
@@ -441,7 +441,7 @@ checksum = "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58"
 
 [[package]]
 name = "run-indexed"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "proptest",
  "unicode-id-trie-rle-derived-core-properties",
@@ -583,7 +583,7 @@ source = "git+https://github.com/oxc-project/unicode-id-start?rev=d0ab8e55bc03bf
 
 [[package]]
 name = "unicode-id-start-harness"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "criterion",
  "proptest",
@@ -593,7 +593,7 @@ dependencies = [
 
 [[package]]
 name = "unicode-id-trie-rle"
-version = "1.0.0"
+version = "1.0.1"
 dependencies = [
  "proptest",
  "unicode-id-trie-rle-derived-core-properties",
@@ -601,7 +601,7 @@ dependencies = [
 
 [[package]]
 name = "unicode-id-trie-rle-derived-core-properties"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "proptest",
  "thiserror",

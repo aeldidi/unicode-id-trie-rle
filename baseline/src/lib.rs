@@ -18,8 +18,8 @@ impl UnicodeIdentifierClass {
     }
 }
 
-/// Returns whether the codepoint specified has the properties `ID_Start`,
-/// `XID_Start` or the properties `ID_Continue` or `XID_Continue`.
+/// Returns whether the codepoint specified has the properties `XID_Start` or
+/// `XID_Continue`.
 #[inline]
 pub fn unicode_identifier_class(cp: char) -> UnicodeIdentifierClass {
     if cp as u32 > 0x100000 {
@@ -115,10 +115,10 @@ mod tests {
                 for (ch, props) in parsed {
                     let mut bits = 0u8;
                     for prop in props {
-                        if prop.contains("ID_Start") {
+                        if prop.contains("XID_Start") {
                             bits |= IDENTIFIER_START;
                         }
-                        if prop.contains("ID_Continue") {
+                        if prop.contains("XID_Continue") {
                             bits |= IDENTIFIER_CONTINUE;
                         }
                     }
@@ -150,12 +150,12 @@ mod tests {
             assert_eq!(
                 class.is_start(),
                 expected & IDENTIFIER_START != 0,
-                "ID_Start mismatch at U+{cp:04X}"
+                "XID_Start mismatch at U+{cp:04X}"
             );
             assert_eq!(
                 class.is_continue(),
                 expected & IDENTIFIER_CONTINUE != 0,
-                "ID_Continue mismatch at U+{cp:04X}"
+                "XID_Continue mismatch at U+{cp:04X}"
             );
         }
     }
@@ -176,13 +176,13 @@ mod tests {
             prop_assert_eq!(
                 class.is_start(),
                 expected & IDENTIFIER_START != 0,
-                "ID_Start mismatch at U+{:04X}",
+                "XID_Start mismatch at U+{:04X}",
                 cp as u32
             );
             prop_assert_eq!(
                 class.is_continue(),
                 expected & IDENTIFIER_CONTINUE != 0,
-                "ID_Continue mismatch at U+{:04X}",
+                "XID_Continue mismatch at U+{:04X}",
                 cp as u32
             );
         }

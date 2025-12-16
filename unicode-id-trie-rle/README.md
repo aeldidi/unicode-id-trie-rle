@@ -4,14 +4,7 @@ An implementation of
 [Unicode Standard Annex #31](https://www.unicode.org/reports/tr31/) for
 determining if a string is a valid Unicode identifier. Alternatively, a
 library which allows querying `char` values for the Unicode properties
-`ID_Start` and `ID_Continue`. This implementation folds the `XID_*`
-properties into the `ID_*` properties (because `XID_*` entries are a subset
-and are stored under the same bits), so characters that are `ID_*` but **not**
-`XID_*` will also be treated as identifier starts/continues. UAX #31 defines
-default identifiers in terms of `XID_Start`/`XID_Continue`, so keep this
-superset behavior in mind. In practice, the difference only matters for
-workloads that require XID closure under normalization; most identifier
-consumers will be unaffected.
+`XID_Start` and `XID_Continue`.
 
 This crate is `no_std` for consumers; it only enables `std` when running tests
 or benchmarks.
@@ -77,7 +70,7 @@ The generated leaf tables are split so we can pack everything densely:
   start of its 1024-codepoint block. The first entry is always `0`, and the
   last entry is the block length (sentinel).
 - `LEAF_RUN_VALUES` stores the run value bits, aligned with
-  `LEAF_RUN_STARTS`. Bit `0x1` means `ID_Start`, bit `0x2` means
+  `LEAF_RUN_STARTS`. Bit `0x1` means `XID_Start`, bit `0x2` means
   `ID_Continue`. Runs are contiguous in both arrays for each leaf, so looking
   up a codepoint offset is just a partition point into that slice.
 
@@ -88,6 +81,10 @@ which has a non-unique leaf node points to the same physical leaf in the leaf
 tables.
 
 ## Changelog
+
+### 1.0.1
+
+- Clarified behaviour to more closely match UAX #31's default reccomendation.
 
 ### 1.0
 

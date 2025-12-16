@@ -213,10 +213,10 @@ mod tests {
                 for (ch, props) in parsed {
                     let mut bits = 0u8;
                     for prop in props {
-                        if prop.contains("ID_Start") {
+                        if prop.contains("XID_Start") {
                             bits |= IDENTIFIER_START;
                         }
-                        if prop.contains("ID_Continue") {
+                        if prop.contains("XID_Continue") {
                             bits |= IDENTIFIER_CONTINUE;
                         }
                     }

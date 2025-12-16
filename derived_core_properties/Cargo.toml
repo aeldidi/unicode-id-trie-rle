@@ -2,7 +2,7 @@
 name = "unicode-id-trie-rle-derived-core-properties"
 description = "A parser for the unicode database DerivedCoreProperties.txt file used in the unicode-id-trie-rle crate."
 authors = ["Ayman El Didi <ayman@eldidi.org>"]
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 repository = "https://github.com/aeldidi/unicode-id-trie-rle"
 license = "0BSD OR CC0-1.0 OR Unlicense"
