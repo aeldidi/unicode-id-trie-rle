@@ -85,10 +85,10 @@ static void load_derived_table(FILE *file)
 		char *prop = trim(semi + 1);
 
 		uint8_t bits = 0;
-		if (strstr(prop, "ID_Start")) {
+		if (strstr(prop, "XID_Start")) {
 			bits |= IDENTIFIER_START;
 		}
-		if (strstr(prop, "ID_Continue")) {
+		if (strstr(prop, "XID_Continue")) {
 			bits |= IDENTIFIER_CONTINUE;
 		}
 		if (bits == 0) {
