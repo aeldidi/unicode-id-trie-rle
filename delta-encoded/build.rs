@@ -102,7 +102,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                     .fold(0, |acc, x| acc | x),
             )
         })
-        .collect::<BTreeMap<char, i32>>();
+        .collect::<BTreeMap<u32, i32>>();
 
     let mut buffer = Vec::with_capacity(1 << 15);
 

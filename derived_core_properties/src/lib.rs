@@ -31,10 +31,10 @@ pub enum Error {
 /// from each codepoint to a [HashSet] of that codepoint's properties.
 pub fn parse<R: io::Read>(
     reader: R,
-) -> Result<BTreeMap<char, HashSet<String>>, Error> {
+) -> Result<BTreeMap<u32, HashSet<String>>, Error> {
     let mut reader = BufReader::new(reader);
     let mut buf = String::new();
-    let mut result: BTreeMap<char, HashSet<String>> = BTreeMap::new();
+    let mut result: BTreeMap<u32, HashSet<String>> = BTreeMap::new();
     loop {
         buf.clear();
         if reader.read_line(&mut buf)? == 0 {
@@ -58,11 +58,6 @@ pub fn parse<R: io::Read>(
         let (start_range, end_range) = parse_range(codepoint_range)?;
 
         for cp in start_range..=end_range {
-            let cp = match char::from_u32(cp) {
-                Some(x) => x,
-                None => return Err(Error::InvalidCodepoint),
-            };
-
             if let Some(x) = result.get_mut(&cp) {
                 x.insert(prop_name.to_string());
             } else {
@@ -111,7 +106,7 @@ mod tests {
             let mut contents = String::from("# Initial comment that should be ignored \n");
             contents.push_str(" \n");
 
-            let mut expected: BTreeMap<char, HashSet<String>> = BTreeMap::new();
+            let mut expected: BTreeMap<u32, HashSet<String>> = BTreeMap::new();
 
             for (idx, (start, end)) in cases.iter().enumerate() {
                 let prop_name = format!("Prop{idx}");
@@ -119,7 +114,7 @@ mod tests {
                 contents.push('\n');
                 for cp in *start..=*end {
                     expected
-                        .entry(char::from_u32(cp).unwrap())
+                        .entry(cp)
                         .or_default()
                         .insert(prop_name.clone());
                 }
@@ -127,26 +122,13 @@ mod tests {
                 let single_prop = format!("Single{idx}");
                 contents.push_str(&format!("  {start:04X}; {single_prop} # inline comment\n\n"));
                 expected
-                    .entry(char::from_u32(*start).unwrap())
+                    .entry(*start)
                     .or_default()
                     .insert(single_prop);
             }
 
             let parsed = parse(contents.as_bytes()).unwrap();
             prop_assert_eq!(parsed, expected);
-        }
-    }
-
-    proptest! {
-        #[test]
-        fn parse_errors_on_invalid_codepoints(
-            start in 0x0FFF00u32..=0x0FFFF0,
-            extend in 1u32..=0x4000
-        ) {
-            let end = 0x10FFFF + extend;
-            let contents = format!("{start:06X}..{end:06X}; InvalidRange\n");
-            let err = parse(contents.as_bytes()).unwrap_err();
-            prop_assert!(matches!(err, Error::InvalidCodepoint));
         }
     }
 

@@ -8,6 +8,7 @@ members = [
     "unicode-id-trie-rle",
     "derived_core_properties",
     "unicode-id-start",
+    "xid-visualization",
 ]
 
 [profile.release]

@@ -39,7 +39,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                     .fold(0, |acc, x| acc | x),
             )
         })
-        .collect::<BTreeMap<char, u64>>();
+        .collect::<BTreeMap<u32, u64>>();
 
     let mut buffer = Vec::new();
     let mut i = 0;
@@ -50,10 +50,7 @@ fn main() -> Result<(), Box<dyn Error>> {
             limit = MAX_CODEPOINT - 1;
         }
         for j in 0..=limit {
-            let c = match char::from_u32(i + j) {
-                Some(x) => x,
-                None => continue,
-            };
+            let c = i + j;
             value |= parsed.get(&c).unwrap_or(&0) << j * 2;
         }
         buffer.push(value);
